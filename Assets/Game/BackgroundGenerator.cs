@@ -39,7 +39,7 @@ public class BackgroundGenerator : MonoBehaviour
 			{
 				explosionDirection.Normalize();
 				explosionDirection *= (explosionStrength * ((maxDistanceSqr - distanceSqr) / maxDistanceSqr));
-				allSprites[index].rigidbody2D.AddForceAtPosition(explosionDirection, explosionPosition);
+				allSprites[index].GetComponent<Rigidbody2D>().AddForceAtPosition(explosionDirection, explosionPosition);
 			}
 		}
 	}

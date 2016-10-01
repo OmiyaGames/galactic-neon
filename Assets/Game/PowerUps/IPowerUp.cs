@@ -68,7 +68,7 @@ public abstract class IPowerUp : IDestructable
 
 	protected void FixedUpdate ()
 	{
-		rigidbody2D.transform.position += (velocityVector * Time.deltaTime);
+		GetComponent<Rigidbody2D>().transform.position += (velocityVector * Time.deltaTime);
 	}
 
 	protected void OnTriggerEnter2D(Collider2D other)

@@ -21,7 +21,7 @@ public class ScoreLabel : MonoBehaviour
 	void Start ()
 	{
 		// Play animation
-		animation.Play();
+		GetComponent<Animation>().Play();
 
 		// Get a random hue
 		hue = Random.value;
@@ -32,7 +32,7 @@ public class ScoreLabel : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(animation.isPlaying == true)
+		if(GetComponent<Animation>().isPlaying == true)
 		{
 			hue += IPowerUp.hueChangeSpeed * Time.deltaTime;
 			if(hue > 1)

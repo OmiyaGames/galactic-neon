@@ -62,7 +62,7 @@ public class BulletControllerHoming : BulletController
 
 	protected override void FixedUpdate ()
 	{
-		rigidbody2D.velocity = velocityVector;
+		GetComponent<Rigidbody2D>().velocity = velocityVector;
 	}
 
 	public override void Destroy(MonoBehaviour controller)

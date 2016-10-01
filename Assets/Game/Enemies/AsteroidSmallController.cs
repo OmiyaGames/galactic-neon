@@ -21,7 +21,7 @@ public class AsteroidSmallController : IEnemy
 			ShipController.Instance.AddDestructable(this);
 
 			// Randomize torque
-			rigidbody2D.angularVelocity = Random.Range(torqueRange.x, torqueRange.y);
+			GetComponent<Rigidbody2D>().angularVelocity = Random.Range(torqueRange.x, torqueRange.y);
 			
 			// Reset life
 			currentLife = 0;

@@ -150,17 +150,17 @@ public class ShipController : MonoBehaviour
 						hurtParticles.Play();
 						if(value > dangerWhenLifeBelow)
 						{
-							audio.PlayOneShot(harmSound);
+							GetComponent<AudioSource>().PlayOneShot(harmSound);
 						}
 						else
 						{
-							audio.PlayOneShot(dangerSound);
+							GetComponent<AudioSource>().PlayOneShot(dangerSound);
 							ShipController.Instance.TextEffect("Danger!!!", "textAttention");
 						}
 					}
 					else
 					{
-						audio.PlayOneShot(deathSound);
+						GetComponent<AudioSource>().PlayOneShot(deathSound);
 						deathParticles.Play();
 					}
 				}
@@ -206,11 +206,11 @@ public class ShipController : MonoBehaviour
 				controlScheme = value;
 				if(controlScheme == Control.MouseAndKeyboard)
 				{
-					Screen.showCursor = true;
+					Cursor.visible = true;
 				}
 				else
 				{
-					Screen.showCursor = false;
+					Cursor.visible = false;
 				}
 			}
 		}
@@ -295,7 +295,7 @@ public class ShipController : MonoBehaviour
 		appearParticles.Play();
 
 		// Play sound effect
-		audio.PlayOneShot(powerUpSound);
+		GetComponent<AudioSource>().PlayOneShot(powerUpSound);
 
 		// Play test effect
 		TextEffect(text, null);
@@ -316,7 +316,7 @@ public class ShipController : MonoBehaviour
 		
 		// Update the label
 		textLabel.text = text;
-		textLabel.renderer.enabled = true;
+		textLabel.GetComponent<Renderer>().enabled = true;
 		
 		// Get a random hue
 		hue = Random.value;
@@ -332,7 +332,7 @@ public class ShipController : MonoBehaviour
 
 		// Update the label
 		comboTextLabel.text = text;
-		comboTextLabel.renderer.enabled = true;
+		comboTextLabel.GetComponent<Renderer>().enabled = true;
 		
 		// Get a random hue
 		comboHue = Random.value;
@@ -360,7 +360,7 @@ public class ShipController : MonoBehaviour
 
 	public void PlaySelectSound()
 	{
-		audio.PlayOneShot(selectSound);
+		GetComponent<AudioSource>().PlayOneShot(selectSound);
 	}
 
 	public void IncrementScore(ScoreLabel label, int incrementBy)
@@ -440,7 +440,7 @@ public class ShipController : MonoBehaviour
 		
 		// Hide the text animation
 		textAnimation.Stop();
-		textLabel.renderer.enabled = false;
+		textLabel.GetComponent<Renderer>().enabled = false;
 
 		// Run the end tutorial event
 		if(endTutorialEvent != null)
@@ -483,9 +483,9 @@ public class ShipController : MonoBehaviour
 		
 		// Hide the text animation
 		textAnimation.Stop();
-		textLabel.renderer.enabled = false;
+		textLabel.GetComponent<Renderer>().enabled = false;
 		comboTextAnimation.Stop();
-		comboTextLabel.renderer.enabled = false;
+		comboTextLabel.GetComponent<Renderer>().enabled = false;
 
 		// Run the death event
 		if(deadEvent != null)
@@ -561,7 +561,7 @@ public class ShipController : MonoBehaviour
 			}
 
 			// Check if the text is visible
-			if(textLabel.renderer.enabled == true)
+			if(textLabel.GetComponent<Renderer>().enabled == true)
 			{
 				// Check if it's still animating
 				if(textAnimation.isPlaying == true)
@@ -578,10 +578,10 @@ public class ShipController : MonoBehaviour
 				else
 				{
 					// Hide the text label when it's done animating
-					textLabel.renderer.enabled = false;
+					textLabel.GetComponent<Renderer>().enabled = false;
 				}
 			}
-			if(comboTextLabel.renderer.enabled == true)
+			if(comboTextLabel.GetComponent<Renderer>().enabled == true)
 			{
 				// Check if it's still animating
 				if(comboTextAnimation.isPlaying == true)
@@ -598,7 +598,7 @@ public class ShipController : MonoBehaviour
 				else
 				{
 					// Hide the text label when it's done animating
-					comboTextLabel.renderer.enabled = false;
+					comboTextLabel.GetComponent<Renderer>().enabled = false;
 				}
 			}
 		}
@@ -610,7 +610,7 @@ public class ShipController : MonoBehaviour
 		if(((ShipState == State.Playing) || (ShipState == State.Tutorial)) && (isShipMoving == true))
 		{
 			// Adjust the ship's velocity
-			rigidbody2D.velocity = Vector2.Lerp(rigidbody2D.velocity, shipVelocity, (lerpValue * Time.deltaTime));
+			GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(GetComponent<Rigidbody2D>().velocity, shipVelocity, (lerpValue * Time.deltaTime));
 		}
 	}
 

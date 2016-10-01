@@ -40,7 +40,7 @@ public class BulletControllerShield : BulletController
 
 	protected override void Start()
 	{
-		collider2D.isTrigger = true;
+		GetComponent<Collider2D>().isTrigger = true;
 	}
 
 	protected override void FixedUpdate ()

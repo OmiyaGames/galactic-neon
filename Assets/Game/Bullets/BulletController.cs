@@ -28,22 +28,22 @@ public class BulletController : IDestructable
 
 	protected virtual void Start()
 	{
-		collider2D.isTrigger = true;
+		GetComponent<Collider2D>().isTrigger = true;
 		if(ShipController.Instance != null)
 		{
 			ShipController.Instance.AddDestructable(this);
 			velocityVector = (transform.up * velocity);
-			velocityVector.x += ShipController.Instance.rigidbody2D.velocity.x;
-			velocityVector.y += ShipController.Instance.rigidbody2D.velocity.y;
-			audio.pitch = Random.Range(pitchRange.x, pitchRange.y);
-			audio.Stop();
-			audio.Play();
+			velocityVector.x += ShipController.Instance.GetComponent<Rigidbody2D>().velocity.x;
+			velocityVector.y += ShipController.Instance.GetComponent<Rigidbody2D>().velocity.y;
+			GetComponent<AudioSource>().pitch = Random.Range(pitchRange.x, pitchRange.y);
+			GetComponent<AudioSource>().Stop();
+			GetComponent<AudioSource>().Play();
 		}
 	}
 
 	protected virtual void FixedUpdate ()
 	{
-		rigidbody2D.transform.position += (velocityVector * Time.deltaTime);
+		GetComponent<Rigidbody2D>().transform.position += (velocityVector * Time.deltaTime);
 	}
 
 	protected virtual void OnTriggerEnter2D(Collider2D info)

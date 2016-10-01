@@ -53,7 +53,7 @@ public class KamikazeController : IEnemy
 
 			// Randomize force
 			mSpawnPosition *= Random.Range(spawnParams.speedRange.x, spawnParams.speedRange.y);
-			rigidbody2D.velocity = mSpawnPosition;
+			GetComponent<Rigidbody2D>().velocity = mSpawnPosition;
 
 			// Reset life
 			currentLife = 0;
@@ -90,10 +90,10 @@ public class KamikazeController : IEnemy
 			}
 
 			// Start turning towards the ship
-			rigidbody2D.AddTorque(targetAngle);
+			GetComponent<Rigidbody2D>().AddTorque(targetAngle);
 
 			// Move towards the direction this object is facing
-			rigidbody2D.AddForce(transform.up * detection.moveForce);
+			GetComponent<Rigidbody2D>().AddForce(transform.up * detection.moveForce);
 		}
 		if(jetParticles.enableEmission != isMoving)
 		{

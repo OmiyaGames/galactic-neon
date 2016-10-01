@@ -63,7 +63,7 @@ public class TurretController : IEnemy
 			ShipController.Instance.AddDestructable(this);
 
 			// Randomize torque
-			rigidbody2D.angularVelocity = Random.Range(spawnParams.torqueRange.x, spawnParams.torqueRange.y);
+			GetComponent<Rigidbody2D>().angularVelocity = Random.Range(spawnParams.torqueRange.x, spawnParams.torqueRange.y);
 
 			// Calculate where to aim for
 			mSpawnPosition = ShipController.Instance.transform.position;
@@ -75,7 +75,7 @@ public class TurretController : IEnemy
 			
 			// Randomize force
 			mSpawnPosition *= Random.Range(spawnParams.speedRange.x, spawnParams.speedRange.y);
-			rigidbody2D.velocity = mSpawnPosition;
+			GetComponent<Rigidbody2D>().velocity = mSpawnPosition;
 
 			// Reset life
 			currentLife = 0;
@@ -104,7 +104,7 @@ public class TurretController : IEnemy
 					velocity.y = smallerAsteroids.spawnPositions[index].position.y - transform.position.y;
 					velocity.Normalize();
 					velocity *= smallerAsteroids.speed;
-					clone.rigidbody2D.velocity = velocity;
+					clone.GetComponent<Rigidbody2D>().velocity = velocity;
 				}
 			}
 
@@ -151,12 +151,12 @@ public class TurretController : IEnemy
 				}
 				
 				// Start turning towards the ship
-				rigidbody2D.AddTorque(targetAngle);
+				GetComponent<Rigidbody2D>().AddTorque(targetAngle);
 
 				// Move towards the direction this object is facing
 				if(targetShip == Type.MoveTarget)
 				{
-					rigidbody2D.AddForce(transform.up * detection.moveForce);
+					GetComponent<Rigidbody2D>().AddForce(transform.up * detection.moveForce);
 					if(detection.jetParticles.enableEmission == false)
 					{
 						detection.jetParticles.enableEmission = true;

@@ -35,8 +35,8 @@ public class FollowShip : MonoBehaviour
 	{
 		if(msInstance != null)
 		{
-			msInstance.animation.Stop();
-			msInstance.animation.Play();
+			msInstance.GetComponent<Animation>().Stop();
+			msInstance.GetComponent<Animation>().Play();
 		}
 	}
 }

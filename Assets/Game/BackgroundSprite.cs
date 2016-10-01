@@ -65,8 +65,8 @@ public class BackgroundSprite : MonoBehaviour
 		transform.position = position;
 
 		// Cancel physics
-		rigidbody2D.velocity = Vector2.zero;
-		rigidbody2D.angularVelocity = 0;
+		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		GetComponent<Rigidbody2D>().angularVelocity = 0;
 
 		// Rotate star
 		transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
@@ -79,6 +79,6 @@ public class BackgroundSprite : MonoBehaviour
 		rotateSpeed = Random.Range(-maxSpinSpeed, maxSpinSpeed);
 
 		// Animate the star
-		animation.Play();
+		GetComponent<Animation>().Play();
 	}
 }

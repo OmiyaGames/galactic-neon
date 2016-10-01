@@ -46,7 +46,7 @@ public class AsteroidLargeController : IEnemy
 					velocity.y = smallerAsteroids.spawnPositions[index].position.y - transform.position.y;
 					velocity.Normalize();
 					velocity *= Random.Range(smallerAsteroids.speedRange.x, smallerAsteroids.speedRange.y);
-					clone.rigidbody2D.velocity = velocity;
+					clone.GetComponent<Rigidbody2D>().velocity = velocity;
 				}
 			}
 		}
@@ -79,7 +79,7 @@ public class AsteroidLargeController : IEnemy
 			ShipController.Instance.AddDestructable(this);
 
 			// Randomize torque
-			rigidbody2D.angularVelocity = Random.Range(spawnParams.torqueRange.x, spawnParams.torqueRange.y);
+			GetComponent<Rigidbody2D>().angularVelocity = Random.Range(spawnParams.torqueRange.x, spawnParams.torqueRange.y);
 
 			// Calculate where to aim for
 			mSpawnPosition = ShipController.Instance.transform.position;
@@ -91,7 +91,7 @@ public class AsteroidLargeController : IEnemy
 			
 			// Randomize force
 			mSpawnPosition *= Random.Range(spawnParams.speedRange.x, spawnParams.speedRange.y);
-			rigidbody2D.velocity = mSpawnPosition;
+			GetComponent<Rigidbody2D>().velocity = mSpawnPosition;
 
 			// Reset life
 			currentLife = 0;
