@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400002}
+  - 114: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: Pooling Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400004}
+  - 114: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: Global
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+  m_RootOrder: 0
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400002}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1774af6063f418442896f22c781fcf7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPreload:
+  - {fileID: 100002, guid: 2303a0e30b9839b41992d941fb1c4a85, type: 2}
+  - {fileID: 100000, guid: aba7f649f7d52a942abd7a128a77d4dc, type: 2}
+  - {fileID: 100000, guid: b08dfe0bbf2caa743b8eab812a501028, type: 2}
+  - {fileID: 100000, guid: f8bbb7f20ada4c644875e4e62a6d43c3, type: 2}
+  - {fileID: 100002, guid: d554abab746017f4a91089275d5db4f0, type: 2}
+  - {fileID: 100000, guid: c2c883690a67aed499c2190b598ba6fb, type: 2}
+  - {fileID: 100000, guid: 033427af99566f0498122904c4f90449, type: 2}
+  - {fileID: 100000, guid: 93c782f01bab6c441b605d7e837a0c7f, type: 2}
+  - {fileID: 100000, guid: 09a1905cb0642fe40a710907af2e512a, type: 2}
+  - {fileID: 100004, guid: d5c8f0a6f381cf24a9164fdf7918e236, type: 2}
+  - {fileID: 100002, guid: 8e9fd132f65c300469b7f382981e77c1, type: 2}
+  - {fileID: 100002, guid: 9ec5bb7fa3148f6499ccbad3264b681e, type: 2}
+  - {fileID: 100008, guid: f8c8f3326d758f542b4aa3c75174e139, type: 2}
+  - {fileID: 100006, guid: 10101d7934323174aa2270ce3320ffe6, type: 2}
+  - {fileID: 100000, guid: d4c040b18c5860b41b56a2cf5f0bf288, type: 2}
+  - {fileID: 100000, guid: 432bbe6a9b4e64f47aa4d896d4d8a773, type: 2}
+  - {fileID: 100000, guid: 35838b714c28c95438f06d9bfdba900e, type: 2}
+  - {fileID: 100000, guid: 89a4037b9cce4d444830dabb406a7cd2, type: 2}
+  - {fileID: 100000, guid: 910669d7830da6d4ea3e7467c8a3e452, type: 2}
+  - {fileID: 100000, guid: e35ffb1604f224d4891ab259df4c488c, type: 2}
+  - {fileID: 100000, guid: 92b1c16ca1d090047a110561e4355577, type: 2}
+  - {fileID: 100000, guid: edcc7d4943df5be448dcb074ea7e1be8, type: 2}
+  - {fileID: 100000, guid: a92123f9c55c5f741a743ba02562e069, type: 2}
+  - {fileID: 100000, guid: 31a9c3aaa78ba7e47ade7d398cf27c74, type: 2}
+  - {fileID: 100000, guid: af650ede2a9083e4bb39ea529cbac887, type: 2}
+  - {fileID: 100000, guid: 5e23b02c027c0ca4d9d2692d85e198c0, type: 2}
+  - {fileID: 100000, guid: a8da4581ec8a24840a1e7f65f7ee73a3, type: 2}
+  - {fileID: 100002, guid: 599d2b63d799f1441b155d6f4d5f0c96, type: 2}
+  - {fileID: 100002, guid: 4a6b35af5d016d24c8f17154cfbe9b38, type: 2}
+  - {fileID: 100004, guid: 785971b8c5a978e4d96f905d16550e31, type: 2}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8e1b5299f2a04459cf289433187e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100004}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

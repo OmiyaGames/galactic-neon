@@ -59,16 +59,16 @@ public class OmiyaGamesBuildScript
         PerformWebBuild();
 
         // Build for the Windows platform
-        PerformWindows32Build();
-        PerformWindows64Build();
+        //PerformWindows32Build();
+        //PerformWindows64Build();
 
         // Build for the Mac platform
-        PerformMac32Build();
-        PerformMac64Build();
+        //PerformMac32Build();
+        //PerformMac64Build();
 
         // Build for the Linux platform
-        PerformLinux32Build();
-        PerformLinux64Build();
+        //PerformLinux32Build();
+        //PerformLinux64Build();
 
         // Check the editor's platform
         if(Application.platform == RuntimePlatform.OSXEditor)

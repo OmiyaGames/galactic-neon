@@ -6,4 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Asteroids.unity
+    path: Assets/Scenes/Title.unity
+  - enabled: 1
+    path: Assets/Scenes/RogueLike.unity
+  - enabled: 1
+    path: Assets/Scenes/Endless.unity
